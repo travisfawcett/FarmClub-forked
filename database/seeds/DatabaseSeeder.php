@@ -10,23 +10,24 @@ class DatabaseSeeder extends Seeder
 {
 	public function run()
 	{
-		$faker = FakerFactory::create();
+		$storesFaker = FakerFactory::create();
+		foreach (range (1,10) as $index) {
+			DB::table('stores')->insert([
+				'name' => $storesFaker->company,
+				'address' => $storesFaker->address
+			]);
+		}
+
+		$articlesFaker = FakerFactory::create();
 		foreach (range (1,50) as $index) {
 			DB::table('articles')->insert([
-				'name' => $faker->colorName,
-	        	'description' => $faker->sentence($nbWords = 5, $variableNbWords = true),
-	        	'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 1, $max = 500),
-	        	'total_in_shelf' => $faker->numberBetween($min = 0, $max = 100),
-	        	'total_in_vault' => $faker->numberBetween($min = 20, $max = 1000),
-	        	'store_id' => $faker->numberBetween($min = 12, $max = 21)
+				'name' => $articlesFaker->colorName,
+        		'description' => $articlesFaker->sentence($nbWords = 5, $variableNbWords = true),
+        		'price' => $articlesFaker->randomFloat($nbMaxDecimals = 2, $min = 1, $max = 500),
+        		'total_in_shelf' => $articlesFaker->numberBetween($min = 0, $max = 100),
+        		'total_in_vault' => $articlesFaker->numberBetween($min = 20, $max = 1000),
+        		'store_id' => $articlesFaker->numberBetween($min = 1, $max = 10)
 			]);
 		}
 	}
 }
-		// $faker = FakerFactory::create();
-		// foreach (range (1,10) as $index) {
-		// 	DB::table('stores')->insert([
-		// 		'name' => $faker->company,
-  		//		'address' => $faker->address
-		// 	]);
-		// }
