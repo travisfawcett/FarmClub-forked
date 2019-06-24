@@ -17,7 +17,8 @@ class Stores extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'address' => $this->address
+            'address' => $this->address,
+            'deleted_at' => $this->deleted_at
         ];
     }
 }

@@ -10,7 +10,7 @@ class Store extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['name', 'address', 'created_at', 'updated_at'];
+    protected $fillable = ['name', 'address', 'created_at', 'updated_at', 'deleted_at'];
     protected $dates = ['deleted_at'];
 
 

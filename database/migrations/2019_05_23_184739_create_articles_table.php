@@ -21,6 +21,7 @@ class CreateArticlesTable extends Migration
             $table->integer('total_in_shelf');
             $table->integer('total_in_vault');
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 

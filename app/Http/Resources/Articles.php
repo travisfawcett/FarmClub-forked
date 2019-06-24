@@ -21,7 +21,8 @@ class Articles extends JsonResource
             'price' => $this->price,
             'total_in_shelf' => $this->total_in_shelf,
             'total_in_vault' => $this->total_in_vault,
-            'store_id' => $this->store_id
+            'store_id' => $this->store_id,
+            'deleted_at'=> $this->deleted_at
         ];
     }
 }
