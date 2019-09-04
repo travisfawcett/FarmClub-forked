@@ -15,6 +15,7 @@ class Article extends Model
 
     public function store()
     {
+        // Add testing comment 
         return $this->belongsTo('App\Store');
     }
 }
