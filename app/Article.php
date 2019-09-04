@@ -13,6 +13,9 @@ class Article extends Model
     protected $dates = ['deleted_at'];
 
 
+    /**
+     * @return mixed
+     */
     public function store()
     {
         return $this->belongsTo('App\Store');
